@@ -1,3 +1,6 @@
+.bold { font-weight: bold }
+.green { color: #003300 !important; }
 .margin-left { margin-left: 10px; }
+.red { color: red !important; }
 .thumbnail { min-height: 210px; }
 .well div { color: #bbb; }
