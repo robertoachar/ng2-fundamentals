@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   moduleId: module.id,
   selector: 'events-list',
   templateUrl: 'events-list.component.html'
 })
-export class EventsListComponent implements OnInit {
+export class EventsListComponent {
   event = {
     id: 1,
     name: 'Angular Connect',
@@ -19,12 +19,4 @@ export class EventsListComponent implements OnInit {
       country: 'England'
     }
   };
-
-  constructor() { }
-
-  ngOnInit() { }
-
-  handleEventClicked(data) {
-    console.log(data);
-  }
 }
