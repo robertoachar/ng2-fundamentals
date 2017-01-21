@@ -9,15 +9,15 @@ import { Component, Input } from '@angular/core';
 export class EventThumbnailComponent {
   @Input() event: any;
 
-  getStartTimeClass() {
+  getStartTimeStyle() {
     if (this.event && this.event.time === '8:00 am') {
-      return ['bold', 'green'];
+      return { 'color': '#003300', 'font-weight': 'bold' }
     }
 
     if (this.event && this.event.time === '10:00 am') {
-      return ['bold', 'red'];
+      return { 'color': 'red', 'font-weight': 'bold' }
     }
 
-    return [];
+    return {};
   }
 }
