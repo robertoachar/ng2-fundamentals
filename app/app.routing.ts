@@ -8,16 +8,17 @@ import {
   EventDetailsComponent,
   EventGuard,
   EventListComponent,
-  EventListResolver
+  EventListResolver,
+  SessionCreateComponent
 } from './events/index';
 
 const routes: Routes = [
   { path: 'events', component: EventListComponent, resolve: { events: EventListResolver } },
   { path: 'events/new', component: EventCreateComponent, canDeactivate: ['canDeactivateEvent'] },
   { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventGuard] },
-  { path: 'page-not-found', component: PageNotFoundComponent },
-
+  { path: 'events/session/new', component: SessionCreateComponent },
   { path: 'user', loadChildren: 'app/user/user.module#UserModule' },
+  { path: 'page-not-found', component: PageNotFoundComponent },
   { path: '', redirectTo: '/events', pathMatch: 'full' }
 ];
 

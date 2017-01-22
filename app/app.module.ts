@@ -13,7 +13,8 @@ import {
   EventListComponent,
   EventListResolver,
   EventService,
-  EventThumbnailComponent
+  EventThumbnailComponent,
+  SessionCreateComponent
 } from './events/index';
 
 import { PageNotFoundComponent } from './errors/page-not-found.component';
@@ -36,6 +37,7 @@ import { AuthService } from './user/auth.service';
     EventThumbnailComponent,
     EventDetailsComponent,
     EventCreateComponent,
+    SessionCreateComponent,
     PageNotFoundComponent
   ],
   providers: [
