@@ -9,7 +9,7 @@ import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { EventDetailsComponent } from './events/event-details.component';
 
 import { ToastrService } from './common/toastr.service';
-import { EventService } from './events/shared/event.service';
+import { EventService } from './events/event.service';
 
 @NgModule({
   imports: [

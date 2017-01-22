@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ToastrService } from '../common/toastr.service';
-import { EventService } from './shared/event.service';
+import { EventService } from './event.service';
 
 @Component({
   moduleId: module.id,
