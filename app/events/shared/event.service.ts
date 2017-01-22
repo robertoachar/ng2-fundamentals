@@ -5,6 +5,10 @@ export class EventService {
   getEvents() {
     return EVENTS;
   }
+
+  getEvent(id: number) {
+    return EVENTS.find(event => event.id === id);
+  }
 }
 
 const EVENTS = [
@@ -14,7 +18,7 @@ const EVENTS = [
     date: '9/26/2036',
     time: '10:00 am',
     price: 599.99,
-    imageUrl: '/app/assets/images/angularconnect-shield.png',
+    imageUrl: '/app/assets/images/angular-connect-shield.png',
     location: {
       address: '1057 DT',
       city: 'London',
