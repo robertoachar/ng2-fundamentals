@@ -13,6 +13,8 @@ const routes: Routes = [
   { path: 'events/new', component: EventCreateComponent, canDeactivate: ['canDeactivateEvent'] },
   { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventGuard] },
   { path: 'page-not-found', component: PageNotFoundComponent },
+
+  { path: 'user', loadChildren: 'app/user/user.module#UserModule' },
   { path: '', redirectTo: '/events', pathMatch: 'full' }
 ];
 
