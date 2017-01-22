@@ -32,8 +32,19 @@ import { EventService } from './events/event.service';
   providers: [
     EventService,
     ToastrService,
-    EventGuard
+    EventGuard,
+    {
+      provide: 'canDeactivateEvent',
+      useValue: checkDirtyState
+    }
   ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
+
+function checkDirtyState(component: EventCreateComponent) {
+  if (component.isDirty) {
+    return window.confirm('You have not saved.');
+  }
+  return true;
+}

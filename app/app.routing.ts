@@ -9,7 +9,7 @@ import { EventGuard } from './events/event.guard';
 
 const routes: Routes = [
   { path: 'events', component: EventListComponent },
-  { path: 'events/new', component: EventCreateComponent },
+  { path: 'events/new', component: EventCreateComponent, canDeactivate: ['canDeactivateEvent'] },
   { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventGuard] },
   { path: 'page-not-found', component: PageNotFoundComponent },
   { path: '', redirectTo: '/events', pathMatch: 'full' }
