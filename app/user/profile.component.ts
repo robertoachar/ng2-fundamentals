@@ -1,34 +1,47 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AuthService } from './auth.service';
 
 @Component({
   moduleId: module.id,
-  templateUrl: 'profile.component.html'
+  templateUrl: 'profile.component.html',
+  styleUrls: ['profile.component.css']
 })
 export class ProfileComponent implements OnInit {
   profileForm: FormGroup;
+  firstname: FormControl;
+  lastname: FormControl;
 
   constructor(
     private router: Router,
     private auth: AuthService) { }
 
   ngOnInit() {
-    let firstname = new FormControl(this.auth.currentUser.firstname);
-    let lastname = new FormControl(this.auth.currentUser.lastname);
+    this.firstname = new FormControl(this.auth.currentUser.firstname, Validators.required);
+    this.lastname = new FormControl(this.auth.currentUser.lastname, Validators.required);
 
     this.profileForm = new FormGroup({
-      firstname: firstname,
-      lastname: lastname
+      firstname: this.firstname,
+      lastname: this.lastname
     });
   }
 
   save(form) {
-    this.auth.updateCurrentUser(form.firstname, form.lastname);
+    if (this.profileForm.valid) {
+      this.auth.updateCurrentUser(form.firstname, form.lastname);
 
-    this.cancel();
+      this.cancel();
+    }
+  }
+
+  validateFirstname() {
+    return this.firstname.valid || this.firstname.untouched;
+  }
+
+  validateLastname() {
+    return this.lastname.valid || this.lastname.untouched;
   }
 
   cancel() {
