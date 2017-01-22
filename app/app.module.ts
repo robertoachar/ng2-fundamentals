@@ -8,6 +8,9 @@ import { EventListComponent } from './events/event-list.component';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { EventDetailsComponent } from './events/event-details.component';
 import { EventCreateComponent } from './events/event-create.component';
+import { EventGuard } from './events/event.guard';
+
+import { PageNotFoundComponent } from './errors/page-not-found.component';
 
 import { ToastrService } from './common/toastr.service';
 import { EventService } from './events/event.service';
@@ -23,11 +26,13 @@ import { EventService } from './events/event.service';
     EventListComponent,
     EventThumbnailComponent,
     EventDetailsComponent,
-    EventCreateComponent
+    EventCreateComponent,
+    PageNotFoundComponent
   ],
   providers: [
     EventService,
-    ToastrService
+    ToastrService,
+    EventGuard
   ],
   bootstrap: [AppComponent],
 })
