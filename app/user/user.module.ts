@@ -6,6 +6,8 @@ import { UserRouting } from './user.routing';
 import { LoginComponent } from './login.component';
 import { ProfileComponent } from './profile.component';
 
+import { AuthService } from './auth.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -16,7 +18,7 @@ import { ProfileComponent } from './profile.component';
   declarations: [
     LoginComponent,
     ProfileComponent
-    ],
+  ],
   providers: [],
 })
 export class UserModule { }

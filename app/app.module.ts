@@ -19,6 +19,8 @@ import { PageNotFoundComponent } from './errors/page-not-found.component';
 
 import { ToastrService } from './common/toastr.service';
 
+import { AuthService } from './user/auth.service';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -38,6 +40,7 @@ import { ToastrService } from './common/toastr.service';
     ToastrService,
     EventGuard,
     EventListResolver,
+    AuthService,
     {
       provide: 'canDeactivateEvent',
       useValue: checkDirtyState
