@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
 import { NavBarComponent } from './nav/navbar.component';
 import { EventListComponent } from './events/event-list.component';
+import { EventListResolver } from './events/event-list-resolver.service';
 import { EventThumbnailComponent } from './events/event-thumbnail.component';
 import { EventDetailsComponent } from './events/event-details.component';
 import { EventCreateComponent } from './events/event-create.component';
@@ -33,6 +34,7 @@ import { EventService } from './events/event.service';
     EventService,
     ToastrService,
     EventGuard,
+    EventListResolver,
     {
       provide: 'canDeactivateEvent',
       useValue: checkDirtyState
