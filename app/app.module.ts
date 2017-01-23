@@ -23,6 +23,8 @@ import { PageNotFoundComponent } from './errors/page-not-found.component';
 import { ToastrService } from './common/toastr.service';
 import { CollapsibleWellComponent } from './common/collapsible-well.component';
 
+import { DurationPipe } from './events/duration.pipe';
+
 import { AuthService } from './user/auth.service';
 
 @NgModule({
@@ -42,7 +44,8 @@ import { AuthService } from './user/auth.service';
     SessionCreateComponent,
     SessionListComponent,
     PageNotFoundComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   providers: [
     EventService,
