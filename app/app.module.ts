@@ -20,12 +20,14 @@ import {
 
 import { PageNotFoundComponent } from './errors/page-not-found.component';
 
-import { ToastrService } from './common/toastr.service';
+import { Toastr, TOASTR_TOKEN } from './common/toastr.service';
 import { CollapsibleWellComponent } from './common/collapsible-well.component';
 
 import { DurationPipe } from './events/duration.pipe';
 
 import { AuthService } from './user/auth.service';
+
+declare let toastr: Toastr;
 
 @NgModule({
   imports: [
@@ -49,13 +51,16 @@ import { AuthService } from './user/auth.service';
   ],
   providers: [
     EventService,
-    ToastrService,
     EventGuard,
     EventListResolver,
     AuthService,
     {
       provide: 'canDeactivateEvent',
       useValue: checkDirtyState
+    },
+    {
+      provide: TOASTR_TOKEN,
+      useValue: toastr
     }
   ],
   bootstrap: [AppComponent],
