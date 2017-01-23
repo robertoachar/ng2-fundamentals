@@ -21,6 +21,7 @@ import {
 import { PageNotFoundComponent } from './errors/page-not-found.component';
 
 import { ToastrService } from './common/toastr.service';
+import { CollapsibleWellComponent } from './common/collapsible-well.component';
 
 import { AuthService } from './user/auth.service';
 
@@ -40,7 +41,8 @@ import { AuthService } from './user/auth.service';
     EventCreateComponent,
     SessionCreateComponent,
     SessionListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CollapsibleWellComponent
   ],
   providers: [
     EventService,
