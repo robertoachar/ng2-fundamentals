@@ -7,3 +7,4 @@ export * from './event-list.component';
 export * from './event-list-resolver.service';
 export * from './event-thumbnail.component';
 export * from './session-create.component';
+export * from './session-list.component';
