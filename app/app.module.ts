@@ -24,6 +24,7 @@ import { JQUERY_TOKEN } from './common/jquery.service';
 import { Toastr, TOASTR_TOKEN } from './common/toastr.service';
 import { CollapsibleWellComponent } from './common/collapsible-well.component';
 import { SimpleModalComponent } from './common/simple-modal.component';
+import { SimpleModalDirective } from './common/simple-modal.directive';
 
 import { DurationPipe } from './events/duration.pipe';
 
@@ -51,6 +52,7 @@ declare let jQuery: Object;
     PageNotFoundComponent,
     CollapsibleWellComponent,
     SimpleModalComponent,
+    SimpleModalDirective,
     DurationPipe
   ],
   providers: [
