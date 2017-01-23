@@ -15,7 +15,9 @@ import {
   EventService,
   EventThumbnailComponent,
   SessionCreateComponent,
-  SessionListComponent
+  SessionListComponent,
+  UpvoteComponent,
+  VoterService
 } from './events/index';
 
 import { PageNotFoundComponent } from './errors/page-not-found.component';
@@ -49,6 +51,7 @@ declare let jQuery: Object;
     EventCreateComponent,
     SessionCreateComponent,
     SessionListComponent,
+    UpvoteComponent,
     PageNotFoundComponent,
     CollapsibleWellComponent,
     SimpleModalComponent,
@@ -59,6 +62,7 @@ declare let jQuery: Object;
     EventService,
     EventGuard,
     EventListResolver,
+    VoterService,
     AuthService,
     {
       provide: 'canDeactivateEvent',
