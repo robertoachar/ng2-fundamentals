@@ -11,11 +11,14 @@ import { JQUERY_TOKEN } from './jquery.service';
 export class SimpleModalComponent {
   @Input() title: string = '';
   @Input() elementId: string = '';
+  @Input() closeOnBodyClick: string = '';
   @ViewChild('modalcontainer') containerElement: ElementRef;
 
-  constructor(@Inject(JQUERY_TOKEN) private $: any) { }
+  constructor( @Inject(JQUERY_TOKEN) private $: any) { }
 
   closeModal() {
-    this.$(this.containerElement.nativeElement).modal('hide');
+    if (this.closeOnBodyClick.toLocaleLowerCase() === 'true') {
+      this.$(this.containerElement.nativeElement).modal('hide');
+    }
   }
 }
