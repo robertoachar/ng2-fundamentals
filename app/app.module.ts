@@ -17,7 +17,8 @@ import {
   SessionCreateComponent,
   SessionListComponent,
   UpvoteComponent,
-  VoterService
+  VoterService,
+  LocationValidator
 } from './events/index';
 
 import { PageNotFoundComponent } from './errors/page-not-found.component';
@@ -56,7 +57,8 @@ declare let jQuery: Object;
     CollapsibleWellComponent,
     SimpleModalComponent,
     SimpleModalDirective,
-    DurationPipe
+    DurationPipe,
+    LocationValidator
   ],
   providers: [
     EventService,
