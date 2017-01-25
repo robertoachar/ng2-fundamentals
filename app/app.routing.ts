@@ -6,16 +6,16 @@ import { PageNotFoundComponent } from './errors/page-not-found.component';
 import {
   EventCreateComponent,
   EventDetailsComponent,
-  EventGuard,
   EventListComponent,
   EventListResolver,
+  EventResolver,
   SessionCreateComponent
 } from './events/index';
 
 const routes: Routes = [
   { path: 'events', component: EventListComponent, resolve: { events: EventListResolver } },
   { path: 'events/new', component: EventCreateComponent, canDeactivate: ['canDeactivateEvent'] },
-  { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventGuard] },
+  { path: 'events/:id', component: EventDetailsComponent, resolve: { event: EventResolver } },
   { path: 'events/session/new', component: SessionCreateComponent },
   { path: 'user', loadChildren: 'app/user/user.module#UserModule' },
   { path: 'page-not-found', component: PageNotFoundComponent },

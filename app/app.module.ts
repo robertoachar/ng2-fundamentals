@@ -10,7 +10,7 @@ import { NavBarComponent } from './nav/navbar.component';
 import {
   EventCreateComponent,
   EventDetailsComponent,
-  EventGuard,
+  EventResolver,
   EventListComponent,
   EventListResolver,
   EventService,
@@ -64,7 +64,7 @@ declare let jQuery: Object;
   ],
   providers: [
     EventService,
-    EventGuard,
+    EventResolver,
     EventListResolver,
     VoterService,
     AuthService,

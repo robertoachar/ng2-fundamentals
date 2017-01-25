@@ -10,15 +10,15 @@ export class EventService {
   constructor(private http: Http) { }
 
   getEvents(): Observable<IEvent[]> {
-    return this.http.get('/api/events')
-      .map((response: Response) => {
-        return <IEvent[]>response.json();
-      })
-      .catch(this.handleError);
+    return this.http.get('/api/events').map((response: Response) => {
+      return <IEvent[]>response.json();
+    }).catch(this.handleError);
   }
 
-  getEvent(id: number): IEvent {
-    return EVENTS.find(event => event.id === id);
+  getEvent(id: number): Observable<IEvent> {
+    return this.http.get('/api/events/' + id).map((response: Response) => {
+      return <IEvent>response.json();
+    }).catch(this.handleError);
   }
 
   saveEvent(event: IEvent) {
