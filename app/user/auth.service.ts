@@ -10,6 +10,28 @@ export class AuthService {
 
   constructor(private http: Http) { }
 
+  checkAuthenticationStatus() {
+    return this.http.get('/api/currentIdentity')
+      .map((response: any) => {
+        if (response._body) {
+          return response.json();
+        }
+        else {
+          return {}
+        }
+      })
+      .do(currentUser => {
+        if (!!currentUser.userName) {
+          this.currentUser = currentUser;
+        }
+      })
+      .subscribe();
+  }
+
+  isAuthenticated() {
+    return !!this.currentUser;
+  }
+
   login(username: string, password: string) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
@@ -28,10 +50,6 @@ export class AuthService {
   updateCurrentUser(firstName: string, lastName: string) {
     this.currentUser.firstName = firstName;
     this.currentUser.lastName = lastName;
-  }
-
-  isAuthenticated() {
-    return !!this.currentUser;
   }
 
   private handleError(error: Response) {
