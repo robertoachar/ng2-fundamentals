@@ -1,4 +1,4 @@
-import { DebugElement } from '@angular/core';
+import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
@@ -6,9 +6,7 @@ import { ISession } from './event.model';
 import { AuthService } from '../user/auth.service';
 import { VoterService } from './voter.service';
 import { SessionListComponent } from './session-list.component';
-import { UpvoteComponent } from './upvote.component';
 import { DurationPipe } from './duration.pipe';
-import { CollapsibleWellComponent } from '../common/collapsible-well.component';
 
 describe('SessionListComponent', () => {
   let fixture: ComponentFixture<SessionListComponent>;
@@ -29,15 +27,13 @@ describe('SessionListComponent', () => {
       imports: [],
       declarations: [
         SessionListComponent,
-        UpvoteComponent,
-        DurationPipe,
-        CollapsibleWellComponent
+        DurationPipe
       ],
       providers: [
         { provide: AuthService, useValue: mockAuthService },
         { provide: VoterService, useValue: mockVoterService }
       ],
-      schemas: []
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
