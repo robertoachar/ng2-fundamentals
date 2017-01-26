@@ -9,6 +9,8 @@ import { AuthService } from './auth.service';
   styleUrls: ['login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loginInvalid: boolean = false;
+
   constructor(
     private router: Router,
     private auth: AuthService) { }
@@ -16,9 +18,15 @@ export class LoginComponent implements OnInit {
   ngOnInit() { }
 
   login(form) {
-    this.auth.login(form.username, form.password);
-
-    this.cancel();
+    this.auth.login(form.username, form.password)
+      .subscribe(response => {
+        if (!response) {
+          this.loginInvalid = true;
+        }
+        else {
+          this.router.navigate(['/']);
+        }
+      });
   }
 
   cancel() {
