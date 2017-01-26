@@ -13,6 +13,7 @@ module.exports = function (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      require('karma-mocha-reporter')
     ],
 
     files: [
@@ -67,7 +68,7 @@ module.exports = function (config) {
     preprocessors: {
     },
 
-    reporters: ['progress'],
+    reporters: ['mocha'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

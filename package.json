@@ -36,15 +36,16 @@
     "zone.js": "0.6.26"
   },
   "devDependencies": {
+    "@types/core-js": "0.9.34",
+    "@types/jasmine": "2.5.41",
+    "@types/node": "6.0.46",
     "concurrently": "3.1.0",
     "jasmine-core": "2.5.2",
     "karma": "1.4.0",
     "karma-chrome-launcher": "2.0.0",
     "karma-jasmine": "1.1.0",
-    "typescript": "2.0.3",
-    "@types/core-js": "0.9.34",
-    "@types/jasmine": "2.5.41",
-    "@types/node": "6.0.46"
+    "karma-mocha-reporter": "2.2.2",
+    "typescript": "2.0.3"
   },
   "repository": {}
 }
