@@ -35,7 +35,7 @@ export class SessionCreateComponent implements OnInit {
       duration: this.duration,
       level: this.level,
       abstract: this.abstract
-    })
+    });
   }
 
   saveSession(form) {
@@ -47,7 +47,7 @@ export class SessionCreateComponent implements OnInit {
       level: form.level,
       abstract: form.abstract,
       voters: []
-    }
+    };
 
     this.saveNewSession.emit(session);
   }

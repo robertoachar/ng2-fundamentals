@@ -11,13 +11,13 @@ import { IEvent } from './index';
 export class EventThumbnailComponent {
   @Input() event: IEvent;
 
-  getStartTimeStyle():any  {
+  getStartTimeStyle(): any {
     if (this.event && this.event.time === '8:00 am') {
-      return { 'color': '#003300', 'font-weight': 'bold' }
+      return { 'color': '#003300', 'font-weight': 'bold' };
     }
 
     if (this.event && this.event.time === '10:00 am') {
-      return { 'color': 'red', 'font-weight': 'bold' }
+      return { 'color': 'red', 'font-weight': 'bold' };
     }
 
     return {};

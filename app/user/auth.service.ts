@@ -17,7 +17,7 @@ export class AuthService {
           return response.json();
         }
         else {
-          return {}
+          return {};
         }
       })
       .do(currentUser => {
