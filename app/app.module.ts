@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import './rxjs-extensions';
+
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
 import { NavBarComponent } from './nav/navbar.component';
