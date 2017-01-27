@@ -8,6 +8,7 @@ import './rxjs-extensions';
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
 import { NavBarComponent } from './nav/navbar.component';
+import { UserModule } from './user/user.module';
 
 import {
   EventCreateComponent,
@@ -45,7 +46,8 @@ let jQuery: Object = window['$'];
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    AppRouting
+    AppRouting,
+    UserModule
   ],
   declarations: [
     AppComponent,
