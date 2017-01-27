@@ -14,7 +14,8 @@ import {
 
 const routes: Routes = [
   { path: 'events', component: EventListComponent, resolve: { events: EventListResolver } },
-  { path: 'events/new', component: EventCreateComponent, canDeactivate: ['canDeactivateEvent'] },
+  // { path: 'events/new', component: EventCreateComponent, canDeactivate: ['canDeactivateEvent'] },
+  { path: 'events/new', component: EventCreateComponent },
   { path: 'events/:id', component: EventDetailsComponent, resolve: { event: EventResolver } },
   { path: 'events/session/new', component: SessionCreateComponent },
   { path: 'user', loadChildren: 'app/user/user.module#UserModule' },

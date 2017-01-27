@@ -36,8 +36,8 @@ import { DurationPipe } from './events/duration.pipe';
 
 import { AuthService } from './user/auth.service';
 
-declare let toastr: Toastr;
-declare let jQuery: Object;
+let toastr: Toastr = window['toastr'];
+let jQuery: Object = window['$'];
 
 @NgModule({
   imports: [
@@ -70,10 +70,10 @@ declare let jQuery: Object;
     EventListResolver,
     VoterService,
     AuthService,
-    {
-      provide: 'canDeactivateEvent',
-      useValue: checkDirtyState
-    },
+    // {
+    //   provide: 'canDeactivateEvent',
+    //   useValue: checkDirtyState
+    // },
     {
       provide: TOASTR_TOKEN,
       useValue: toastr
@@ -87,9 +87,9 @@ declare let jQuery: Object;
 })
 export class AppModule { }
 
-function checkDirtyState(component: EventCreateComponent) {
-  if (component.isDirty) {
-    return window.confirm('You have not saved.');
-  }
-  return true;
-}
+// function checkDirtyState(component: EventCreateComponent) {
+//   if (component.isDirty) {
+//     return window.confirm('You have not saved.');
+//   }
+//   return true;
+// }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 import { EventService } from './index';
 
@@ -9,6 +10,17 @@ import { EventService } from './index';
   styleUrls: ['event-create.component.css']
 })
 export class EventCreateComponent implements OnInit {
+  newEventForm: FormGroup;
+  name: string = '';
+  date: Date;
+  time: string = '';
+  price: Number = 0;
+  address: string = '';
+  city: string = '';
+  country: string = '';
+  onlineUrl: string = '';
+  imageUrl: string = '';
+
   isDirty: boolean = true;
 
   constructor(

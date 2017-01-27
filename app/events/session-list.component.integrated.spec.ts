@@ -1,4 +1,4 @@
-import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+import { DebugElement, NO_ERRORS_SCHEMA, SimpleChanges } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
@@ -13,6 +13,7 @@ describe('SessionListComponent', () => {
   let component: SessionListComponent;
   let element: HTMLElement;
   let debugEl: DebugElement;
+  let changes: SimpleChanges;
 
   beforeEach(async(() => {
     let mockAuthService = {
@@ -62,7 +63,7 @@ describe('SessionListComponent', () => {
       component.sortBy = 'name';
       component.eventId = 4;
 
-      component.ngOnChanges();
+      component.ngOnChanges(changes);
 
       fixture.detectChanges();
 

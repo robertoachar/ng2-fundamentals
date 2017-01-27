@@ -1,9 +1,11 @@
+import { SimpleChanges } from '@angular/core';
 import { SessionListComponent } from './session-list.component';
 import { ISession } from './event.model';
 
 describe('SessionListComponent', () => {
   let component: SessionListComponent;
   let mockAuthService, mockVoterService;
+  let changes: SimpleChanges;
 
   beforeEach(() => {
     component = new SessionListComponent(mockAuthService, mockVoterService);
@@ -21,7 +23,7 @@ describe('SessionListComponent', () => {
       component.sortBy = 'name';
       component.eventId = 3;
 
-      component.ngOnChanges();
+      component.ngOnChanges(changes);
 
       expect(component.visibleSessions.length).toBe(2);
     });
@@ -36,7 +38,7 @@ describe('SessionListComponent', () => {
       component.sortBy = 'name';
       component.eventId = 3;
 
-      component.ngOnChanges();
+      component.ngOnChanges(changes);
 
       expect(component.visibleSessions[2].name).toBe('session 3');
     });

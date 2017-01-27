@@ -9,6 +9,9 @@ import { AuthService } from './auth.service';
   styleUrls: ['login.component.css']
 })
 export class LoginComponent implements OnInit {
+  username: string = '';
+  password: string = '';
+  mouseover: boolean = false;
   loginInvalid: boolean = false;
 
   constructor(
