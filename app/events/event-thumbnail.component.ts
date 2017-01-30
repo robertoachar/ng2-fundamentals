@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { IEvent } from './index';
+import { IEvent } from './event.model';
 
 @Component({
   moduleId: module.id,

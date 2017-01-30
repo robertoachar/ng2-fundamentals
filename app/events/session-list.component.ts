@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
-import { ISession } from './index';
+import { ISession } from './event.model';
 import { AuthService } from '../user/auth.service';
 import { VoterService } from './voter.service';
 

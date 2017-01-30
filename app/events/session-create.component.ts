@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { restrictedWords } from '../common/restricted-words.validator';
-import { ISession } from './index';
+import { ISession } from './event.model';
 
 @Component({
   moduleId: module.id,

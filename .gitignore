@@ -39,4 +39,7 @@ jspm_packages
 # Typescript
 **/app/**/*.js
 **/app/**/*.js.map
+
+# AOT
 **/aot
+**/dist

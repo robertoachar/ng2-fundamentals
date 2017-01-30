@@ -4,7 +4,7 @@ import { ISession } from './event.model';
 
 describe('SessionListComponent', () => {
   let component: SessionListComponent;
-  let mockAuthService, mockVoterService;
+  let mockAuthService: any, mockVoterService: any;
   let changes: SimpleChanges;
 
   beforeEach(() => {

@@ -6,8 +6,6 @@ import { UserRouting } from './user.routing';
 import { LoginComponent } from './login.component';
 import { ProfileComponent } from './profile.component';
 
-import { AuthService } from './auth.service';
-
 @NgModule({
   imports: [
     CommonModule,

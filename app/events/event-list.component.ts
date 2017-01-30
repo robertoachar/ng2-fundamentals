@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { IEvent } from './index';
+import { IEvent } from './event.model';
 
 @Component({
   moduleId: module.id,

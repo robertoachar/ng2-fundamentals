@@ -8,22 +8,20 @@ import './rxjs-extensions';
 import { AppComponent } from './app.component';
 import { AppRouting } from './app.routing';
 import { NavBarComponent } from './nav/navbar.component';
-import { UserModule } from './user/user.module';
 
-import {
-  EventCreateComponent,
-  EventDetailsComponent,
-  EventResolver,
-  EventListComponent,
-  EventListResolver,
-  EventService,
-  EventThumbnailComponent,
-  SessionCreateComponent,
-  SessionListComponent,
-  UpvoteComponent,
-  VoterService,
-  LocationValidator
-} from './events/index';
+import { EventCreateComponent } from './events/event-create.component';
+import { EventListComponent } from './events/event-list.component';
+import { EventListResolver } from './events/event-list-resolver.service';
+import { EventThumbnailComponent } from './events/event-thumbnail.component';
+import { EventDetailsComponent } from './events/event-details.component';
+import { EventResolver } from './events/event-resolver.service';
+import { SessionListComponent } from './events/session-list.component';
+import { SessionCreateComponent } from './events/session-create.component';
+import { VoterService } from './events/voter.service';
+import { UpvoteComponent } from './events/upvote.component';
+import { LocationValidator } from './events/location-validator.directive';
+
+import { UserModule } from './user/user.module';
 
 import { PageNotFoundComponent } from './errors/page-not-found.component';
 
@@ -36,6 +34,7 @@ import { SimpleModalDirective } from './common/simple-modal.directive';
 import { DurationPipe } from './events/duration.pipe';
 
 import { AuthService } from './user/auth.service';
+import { EventService } from './events/event.service';
 
 let toastr: Toastr = window['toastr'];
 let jQuery: Object = window['$'];
@@ -72,10 +71,6 @@ let jQuery: Object = window['$'];
     EventListResolver,
     VoterService,
     AuthService,
-    // {
-    //   provide: 'canDeactivateEvent',
-    //   useValue: checkDirtyState
-    // },
     {
       provide: TOASTR_TOKEN,
       useValue: toastr
@@ -88,10 +83,3 @@ let jQuery: Object = window['$'];
   bootstrap: [AppComponent],
 })
 export class AppModule { }
-
-// function checkDirtyState(component: EventCreateComponent) {
-//   if (component.isDirty) {
-//     return window.confirm('You have not saved.');
-//   }
-//   return true;
-// }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
-import { EventService, IEvent, ISession } from './index';
+import { EventService, } from './event.service';
+import { IEvent, ISession } from './event.model';
 
 @Component({
   moduleId: module.id,
