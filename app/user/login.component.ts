@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() { }
 
-  login(form) {
+  login(form: any) {
     this.auth.login(form.username, form.password)
       .subscribe(response => {
         if (!response) {

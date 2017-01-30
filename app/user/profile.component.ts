@@ -30,7 +30,7 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  save(form) {
+  save(form: any) {
     if (this.profileForm.valid) {
       this.auth.updateCurrentUser(form.firstName, form.lastName)
         .subscribe(() => {
